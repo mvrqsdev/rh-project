@@ -1,0 +1,2 @@
+# Desativa a issue "em branco": toda issue precisa usar um dos templates.
+blank_issues_enabled: false
