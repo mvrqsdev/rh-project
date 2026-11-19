@@ -1,0 +1,55 @@
+name: ✨ Funcionalidade
+description: Nova funcionalidade ou melhoria no sistema.
+title: 'feat: '
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Descreva **o que** precisa ser feito e **por quê**. O "como" fica para o PR.
+        O título segue o padrão dos commits: `feat: cadastro de candidatos`.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      description: Quais partes do sistema serão alteradas?
+      multiple: true
+      options:
+        - server (NestJS)
+        - web (Next.js)
+        - mobile (React Native)
+        - infra / CI
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: O que deve ser feito? Se ajudar, use o formato de história de usuário.
+      placeholder: |
+        Como analista de RH, quero cadastrar um candidato com nome, CPF e e-mail,
+        para iniciar o processo de admissão.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Critérios de aceite
+      description: Condições para considerar a tarefa pronta. Cada item vira um checkbox na issue.
+      placeholder: |
+        - [ ] Endpoint POST /candidates cria o candidato
+        - [ ] CPF inválido retorna erro 400
+        - [ ] Tela de cadastro no web com validação dos campos
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Observações
+      description: Links, prints, regras de negócio, dúvidas em aberto, dependências de outras issues (#123)...
+    validations:
+      required: false

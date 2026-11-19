@@ -1,0 +1,51 @@
+name: 🔧 Tarefa técnica
+description: Refatoração, configuração, dependências, documentação, testes... (sem mudança visível para o usuário).
+title: 'chore: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ajuste o prefixo do título conforme o tipo:
+        `refactor:` refatoração · `test:` testes · `docs:` documentação · `ci:` pipeline · `build:` dependências/build · `chore:` outros
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      multiple: true
+      options:
+        - server (NestJS)
+        - web (Next.js)
+        - mobile (React Native)
+        - eslint-config
+        - infra / CI
+        - monorepo (raiz)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: O que precisa ser feito?
+      placeholder: Corrigir o script de testes do server, que aponta para ./node_modules/jest (o jest fica na raiz do monorepo).
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Por quê?
+      description: Qual problema isso resolve ou qual benefício traz?
+      placeholder: Hoje `npm test` falha, o que impede rodar os testes no CI.
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Como saber que está pronto?
+      placeholder: |
+        - [ ] `npm test -w server` passa
+        - [ ] Testes adicionados ao CI
+    validations:
+      required: false

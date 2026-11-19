@@ -1,0 +1,72 @@
+name: 🐛 Bug
+description: Algo que não está funcionando como deveria.
+title: 'fix: '
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Quanto mais detalhes, mais rápido o bug é corrigido.
+        **Não cole senhas, tokens ou dados pessoais reais** (CPF, e-mail de candidatos...).
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      description: Onde o bug acontece?
+      multiple: true
+      options:
+        - server (NestJS)
+        - web (Next.js)
+        - mobile (React Native)
+        - infra / CI
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o problema.
+      placeholder: Ao salvar um candidato com CPF válido, a tela mostra "Erro inesperado".
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: O que deveria acontecer?
+      placeholder: O candidato deveria ser salvo e aparecer na listagem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passos para reproduzir
+      placeholder: |
+        1. Acessar /candidatos/novo
+        2. Preencher o CPF 123.456.789-09
+        3. Clicar em "Salvar"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / mensagens de erro
+      description: Cole aqui o erro do terminal ou do console do navegador. Vai ser formatado como código.
+      render: shell
+    validations:
+      required: false
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Ambiente
+      options:
+        - Local (desenvolvimento)
+        - Homologação
+        - Produção
+    validations:
+      required: true
