@@ -18,7 +18,6 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@rh/eslint-config": "*",
     "@tailwindcss/turbopack": "4.3.3",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^8.0.0",
@@ -31,6 +30,7 @@
     "jsdom": "^29.1.1",
     "tailwindcss": "4.3.3",
     "typescript": "^5",
-    "vitest": "^5.1.1"
+    "vitest": "^5.1.1",
+    "@rh/eslint-config": "*"
   }
 }
