@@ -20,6 +20,22 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Testes
+
+Os testes usam [Vitest](https://vitest.dev) e [Testing Library](https://testing-library.com/docs/react-testing-library/intro/). Comandos, a partir da raiz do monorepo:
+
+| Comando                     | O que faz                                         |
+| --------------------------- | ------------------------------------------------- |
+| `npm test -w web`           | Roda todos os testes uma vez.                     |
+| `npm run test:watch -w web` | Roda os testes a cada alteração.                  |
+| `npm run test:cov -w web`   | Roda os testes e gera a cobertura em `coverage/`. |
+
+- Crie o teste ao lado do arquivo testado, com o sufixo `.test.ts` ou `.test.tsx`.
+- Importe `describe`, `it`, `expect` etc. de `vitest` (os globals não estão habilitados).
+- O ambiente padrão é o `jsdom`. Para código de servidor, comece o arquivo com `// @vitest-environment node`.
+
+**Limitação:** Server Components `async` não são suportados pelo Vitest. Eles devem ser cobertos por testes E2E (Playwright, em issue futura).
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
