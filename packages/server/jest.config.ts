@@ -19,6 +19,7 @@ const shared = {
   },
   moduleNameMapper: pathsToModuleNameMapper(paths, { prefix: '<rootDir>/' }),
   testEnvironment: 'node',
+  setupFiles: ['<rootDir>/test/setup-env.ts'],
 } satisfies Config;
 
 // Unit e e2e ficam no mesmo arquivo como `projects`; escolha qual roda com

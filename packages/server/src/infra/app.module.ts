@@ -9,6 +9,8 @@ import { HttpModule } from './http/http.module';
     ConfigModule.forRoot({
       validate: (env) => envSchema.parse(env),
       isGlobal: true,
+      // Nos testes, as variáveis vêm de test/setup-env.ts, nunca do .env local.
+      ignoreEnvFile: process.env.NODE_ENV === 'test',
     }),
     EnvModule,
     HttpModule,
